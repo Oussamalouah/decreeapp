@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Infrastructure.File.Conversion</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="External\**" />
+    <EmbeddedResource Remove="External\**" />
+    <None Remove="External\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.3D" Version="19.9.0" />
+    <PackageReference Include="Aspose.CAD" Version="21.5.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,188 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:051410018656:task-definition/decree-api-task-dev:2",
+    "containerDefinitions": [
+        {
+            "name": "decree-api-container-dev",
+            "image": "051410018656.dkr.ecr.us-east-1.amazonaws.com/decree-monolith-api:latest",
+            "cpu": 0,
+            "memoryReservation": 512,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "Decree_EmailBaseUrl",
+                    "value": "https://api.cc.email/v3"
+                },
+                {
+                    "name": "Decree_SmtpUsername",
+                    "value": "AKIAQX6CGUFQOVU6YKC6"
+                },
+                {
+                    "name": "DynamoDBRegion",
+                    "value": "us-east-1"
+                },
+                {
+                    "name": "Shopify_ApiKey",
+                    "value": "1c03b27cdafe99d2d6ded639ed945b38"
+                },
+                {
+                    "name": "AWSS3_AccessKey",
+                    "value": "AKIAQX6CGUFQAUKH7VOS"
+                },
+                {
+                    "name": "Decree_SmtpServer",
+                    "value": "email-smtp.us-east-1.amazonaws.com"
+                },
+                {
+                    "name": "Shopify_BaseUrl",
+                    "value": "decree-co.myshopify.com"
+                },
+                {
+                    "name": "Decree_ContactUsEmail",
+                    "value": "kevin.oliveros@smashingboxes.com"
+                },
+                {
+                    "name": "Shopify_AccessToken",
+                    "value": "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"
+                },
+                {
+                    "name": "Decree_ReplyToEmail",
+                    "value": "test@email.decreecompany.com"
+                },
+                {
+                    "name": "DynamoDBSecretKey",
+                    "value": "wLBx4CYswRetFIx8aUhIvBYQtBHCyOpCDUNYXNmT"
+                },
+                {
+                    "name": "AWSS3_SecretKey",
+                    "value": "v3ATnLeb3xZvyFvvEBhUqXqe0pNV1zphLmhUptGK"
+                },
+                {
+                    "name": "Decree_RedirectUri",
+                    "value": "https://localhost:44363"
+                },
+                {
+                    "name": "Decree_SmtpPassword",
+                    "value": "BN354md2hxBLnfCAdqXuhGFwZH1T/e5DGr32d+C45m6H"
+                },
+                {
+                    "name": "Decree_SmptPortNo",
+                    "value": "587"
+                },
+                {
+                    "name": "Decree_EmailApiKey",
+                    "value": "74e9e0c0-df3b-4a26-af91-378f0b14b17f"
+                },
+                {
+                    "name": "Shopify_SecretKey",
+                    "value": "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"
+                },
+                {
+                    "name": "AWSS3_BaseUrl",
+                    "value": "https://decree-dev.s3.amazonaws.com/"
+                },
+                {
+                    "name": "Decree_FromEmail",
+                    "value": "test@email.decreecompany.com"
+                },
+                {
+                    "name": "AWSS3_Bucket",
+                    "value": "decree-dev"
+                },
+                {
+                    "name": "DynamoDBAccessKey",
+                    "value": "AKIAQX6CGUFQCBQKBPGP"
+                },
+                {
+                    "name": "Decree_FromName",
+                    "value": "Decree"
+                },
+                {
+                    "name": "ASPNETCORE_URLS",
+                    "value": "http://+;"
+                },
+                {
+                    "name": "AWSS3_Region",
+                    "value": "us-east-1"
+                },
+                {
+                    "name": "Decree_EmailSecretKey",
+                    "value": "B6HcScMlrJbUTqfqFXImvw"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/decree-api-task-dev",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "decree-api-task-dev",
+    "taskRoleArn": "arn:aws:iam::051410018656:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::051410018656:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 2,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "runtimePlatform": {
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2021-11-30T13:35:24.990Z",
+    "registeredBy": "arn:aws:iam::051410018656:user/stefkeler",
+    "tags": [
+        {
+            "key": "name",
+            "value": "decree"
+        }
+    ]
+}

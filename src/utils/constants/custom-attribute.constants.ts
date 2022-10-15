@@ -1,0 +1,17 @@
+export enum customAttributeFields {
+  SVG_TEXT = '_svg_text',
+  SVG_FILE = '_svg_file',
+  SVG_ATTRIBUTES = '_svg_attributes',
+  PARENT_SVG_FILE = '_parent_svg_file',
+  PARENT_PRODUCT_ID = '_parent_product_id',
+  IS_PART_OF_BUNDLE = '_is_part_of_bundle',
+  REORDER_KEY = '_reorder_key',
+  UPLOADED_LOGO = '_uploaded_logo',
+  SHIPMENT = '_shipment',
+  SHIPMENT_TYPE = '_shipment_type',
+  CSV_LINK = '_csv_link',
+  CUSTOM_CARD_DATA = '_custom_card_data',
+  CUSTOM_CARD_PAPER_SETTINGS = '_custom_card_paper_settings',
+  SELECTED_VARIANTS_UNION = '_selected_variants_union',
+  GOOGLE_CLIENT_ID = '_google_client_id',
+}

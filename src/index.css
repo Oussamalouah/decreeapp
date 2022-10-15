@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
+  /** SEMPLICITA **/
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 300;
+    src: url('assets/fonts/Semplicita/Semplicita Light.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 300;
+    font-style: italic;
+    src: url('assets/fonts/Semplicita/Semplicita Light Italic.otf')
+      format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 400;
+    src: url('assets/fonts/Semplicita/Semplicita.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 500;
+    src: url('assets/fonts/Semplicita/Semplicita Medium.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 500;
+    font-style: italic;
+    src: url('assets/fonts/Semplicita/Semplicita Medium Italic.otf')
+      format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 700;
+    src: url('assets/fonts/Semplicita/Semplicita Bold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Semplicita;
+    font-weight: 700;
+    font-style: italic;
+    src: url('assets/fonts/Semplicita/Semplicita Bold Italic.otf')
+      format('opentype');
+  }
+  /** CATAMARAN **/
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 100;
+    src: url('assets/fonts/Catamaran/Catamaran-Thin.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 200;
+    src: url('assets/fonts/Catamaran/Catamaran-ExtraLight.ttf')
+      format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 300;
+    src: url('assets/fonts/Catamaran/Catamaran-Light.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 400;
+    src: url('assets/fonts/Catamaran/Catamaran-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 500;
+    src: url('assets/fonts/Catamaran/Catamaran-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 600;
+    src: url('assets/fonts/Catamaran/Catamaran-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 700;
+    src: url('assets/fonts/Catamaran/Catamaran-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 800;
+    src: url('assets/fonts/Catamaran/Catamaran-ExtraBold.ttf')
+      format('truetype');
+  }
+  @font-face {
+    font-family: Catamaran;
+    font-weight: 900;
+    src: url('assets/fonts/Catamaran/Catamaran-Black.ttf') format('truetype');
+  }
+  /** HALANT **/
+  @font-face {
+    font-family: Halant;
+    font-weight: 300;
+    src: url('assets/fonts/Halant/Halant-Light.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Halant;
+    font-weight: 400;
+    src: url('assets/fonts/Halant/Halant-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Halant;
+    font-weight: 500;
+    src: url('assets/fonts/Halant/Halant-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Halant;
+    font-weight: 600;
+    src: url('assets/fonts/Halant/Halant-Semibold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Halant;
+    font-weight: 700;
+    src: url('assets/fonts/Halant/Halant-Bold.ttf') format('truetype');
+  }
+  /** CHARTER **/
+  @font-face {
+    font-family: Charter;
+    font-weight: 400;
+    src: url('assets/fonts/Charter/Charter Regular.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Charter;
+    font-weight: 400;
+    font-style: italic;
+    src: url('assets/fonts/Charter/Charter Italic.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Charter;
+    font-weight: 700;
+    src: url('assets/fonts/Charter/Charter Bold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: Charter;
+    font-weight: 700;
+    font-style: italic;
+    src: url('assets/fonts/Charter/Charter Bold Italic.otf') format('opentype');
+  }
+  /** COMPENDIUM **/
+  @font-face {
+    font-family: Compendium;
+    font-weight: 400;
+    src: url('assets/fonts/Compendium/Compendium Regular.otf')
+      format('opentype');
+  }
+  /** PACIFICO **/
+  @font-face {
+    font-family: Pacifico;
+    font-weight: 400;
+    src: url('assets/fonts/Pacifico/Pacifico.ttf') format('truetype');
+  }
+  /** OVO **/
+  @font-face {
+    font-family: Ovo;
+    font-weight: 400;
+    src: url('assets/fonts/Ovo/Ovo-Regular.ttf') format('truetype');
+  }
+  /** OVERPASS **/
+  @font-face {
+    font-family: Overpass;
+    font-weight: 400;
+    src: url('assets/fonts/Overpass/Overpass_Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: Overpass;
+    font-weight: 700;
+    src: url('assets/fonts/Overpass/Overpass_Bold.ttf') format('truetype');
+  }
+  /** NICKAINLEY **/
+  @font-face {
+    font-family: Nickainley;
+    font-weight: 400;
+    src: url('assets/fonts/Nickainley/Nickainley-Normal.otf') format('opentype');
+  }
+  /** MINA **/
+  @font-face {
+    font-family: Mina;
+    font-weight: 400;
+    src: url('assets/fonts/Mina/Mina Regular.otf') format('opentype');
+  }
+  /** DOMLOVESMARY PRO **/
+  @font-face {
+    font-family: DomLovesMary Pro;
+    font-weight: 400;
+    src: url('assets/fonts/DomLovesMary/DomLovesMary Pro.otf')
+      format('opentype');
+  }
+  /** CLICKER SCRIPT **/
+  @font-face {
+    font-family: Clicker Script;
+    font-weight: 400;
+    src: url('assets/fonts/Clicker Script/clicker-script.regular.ttf')
+      format('truetype');
+  }
+  /** CANTARELL **/
+  @font-face {
+    font-family: Cantarell;
+    font-weight: 400;
+    src: url('assets/fonts/Cantarell/Cantarell Regular.otf') format('opentype');
+  }
+  /** Braisetto **/
+  @font-face {
+    font-family: Braisetto;
+    font-weight: 400;
+    src: url('assets/fonts/Brasieto/Brasieto Regular.otf') format('opentype');
+  }
+  /** BENTHAM **/
+  @font-face {
+    font-family: Bentham;
+    font-weight: 400;
+    src: url('assets/fonts/Bentham/Bentham-Regular.ttf') format('truetype');
+  }
+  /** AVENIR NEXT **/
+  /* Commented out since this is conflicting with the default Avenir Next */
+  /*@font-face {*/
+  /*  font-family: Avenir Next;*/
+  /*  font-weight: 400;*/
+  /*  src: url('assets/fonts/Avenir Next/Avenir Next.ttc') format('truetype');*/
+  /*}*/
+  /** ARIAL UNICODE **/
+  @font-face {
+    font-family: Arial Unicode MS;
+    font-weight: 400;
+    src: url('assets/fonts/Arial Unicode MS/Arial Unicode.ttf')
+      format('truetype');
+  }
+  /** BROWN AUSTIN SANS **/
+  @font-face {
+    font-family: Brown Austin Sans;
+    font-weight: 400;
+    src: url('assets/fonts/Brown Austin Sans/Brown Austin Sans.otf')
+        format('opentype'),
+      url('assets/fonts/Brown Austin Sans/Brown Austin Sans.ttf')
+        format('truetype');
+  }
+  @font-face {
+    font-family: Brown Austin Sans;
+    font-weight: 400;
+    font-style: italic;
+    src: url('assets/fonts/Brown Austin Sans/Brown Austin Sans Italic.otf')
+        format('opentype'),
+      url('assets/fonts/Brown Austin Sans/Brown Austin Sans Italic.ttf')
+        format('truetype');
+  }
+}
+
+.Toastify__toast {
+  @apply font-sans;
+}
+
+.Toastify__toast-body {
+  @apply px-5 py-2;
+}
+
+.react-confirm-alert-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  animation: none;
+}
+
+/* Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

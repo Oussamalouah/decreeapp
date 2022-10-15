@@ -1,0 +1,10 @@
+namespace Decree.Stationery.Ecommerce.Core.Application.Messages
+{
+    public class DateDto
+    {
+        public string Type { get; set; }
+        public string Month { get; set; }
+        public string Day { get; set; }
+        public string Year { get; set; }
+    }
+}

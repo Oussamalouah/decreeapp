@@ -1,0 +1,65 @@
+language: node_js
+node_js: 14
+services:
+- docker
+before_install:
+- pip install --user awscli
+- export PATH=$PATH:$HOME/.local/bin
+- curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+- chmod +x ./kubectl
+- sudo mv ./kubectl /usr/local/bin/kubectl
+- mkdir ${HOME}/.kube
+- echo "$KUBE_CONFIG" | base64 --decode > ${HOME}/.kube/config
+jobs:
+  include:
+    - stage: test
+      name: Run Tests
+      install:
+        - npm install
+      script:
+        - echo "run tests"
+    - stage: build-dev
+      name: Build Docker Image
+      install:
+        - npm install
+      script:
+        - eval $(aws ecr get-login --no-include-email --region us-east-1)
+        - docker build -t $REPO_NAME-dev:$TRAVIS_BUILD_NUMBER .
+        - docker tag $REPO_NAME-dev:$TRAVIS_BUILD_NUMBER $DOCKER_REGISTRY_URL/$REPO_NAME-dev:$TRAVIS_BUILD_NUMBER
+        - docker tag $REPO_NAME-dev:$TRAVIS_BUILD_NUMBER $DOCKER_REGISTRY_URL/$REPO_NAME-dev:latest
+        - docker push $DOCKER_REGISTRY_URL/$REPO_NAME-dev:$TRAVIS_BUILD_NUMBER
+        - docker push $DOCKER_REGISTRY_URL/$REPO_NAME-dev:latest
+    - stage: build-prod
+      name: Build Docker Image
+      install:
+        - npm install
+      script:
+        - eval $(aws ecr get-login --no-include-email --region us-east-1)
+        - docker build -t $REPO_NAME:$TRAVIS_BUILD_NUMBER .
+        - docker tag $REPO_NAME:$TRAVIS_BUILD_NUMBER $DOCKER_REGISTRY_URL/$REPO_NAME:$TRAVIS_BUILD_NUMBER
+        - docker tag $REPO_NAME:$TRAVIS_BUILD_NUMBER $DOCKER_REGISTRY_URL/$REPO_NAME:latest
+        - docker push $DOCKER_REGISTRY_URL/$REPO_NAME:$TRAVIS_BUILD_NUMBER
+        - docker push $DOCKER_REGISTRY_URL/$REPO_NAME:latest
+    - stage: deploy-dev
+      name: Deploy Web Dev
+      install:
+        - npm install
+      script:
+        - aws ecs update-service --cluster decree-dev --service decree-service-dev --force-new-deployment
+    - stage: deploy-prod
+      name: Deploy Web Prod
+      install:
+        - npm install
+      script:
+        - aws ecs update-service --cluster decree --service decree-service --force-new-deployment
+stages:
+  - name: test
+    if: '(branch = dev) AND type = pull_request'
+  - name: build-dev
+    if: '(branch = dev) AND type = push'
+  - name: build-prod
+    if: '(branch = master) AND type = push'
+  - name: deploy-dev
+    if: '(branch = dev) AND type = push'
+  - name: deploy-prod
+    if: '(branch = master) AND type = push'

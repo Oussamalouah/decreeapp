@@ -1,0 +1,10 @@
+# Client-only types
+# Client-only types are types that exist only on the client, but not in the remote GraphQL API.
+# Reference:
+# - https://www.apollographql.com/blog/tooling/apollo-codegen/typescript-graphql-code-generator-generate-graphql-types/
+# - https://www.apollographql.com/blog/apollo-client/caching/local-state-management-with-reactive-variables/
+
+extend type QueryRoot {
+  accessToken: String!
+  checkoutId: String!
+}
